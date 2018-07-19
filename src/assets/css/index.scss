@@ -1,0 +1,182 @@
+$red:#fc2b2d;
+$gray:#9298a0;
+$black:#575757;
+$weak:#9298a0;
+$graybg:#eef4f6;
+$border:#f1f1f1 solid 1px;
+
+@function px2rem($n) {
+  @return $n / (7.5 * 3.75) + rem;
+}
+@mixin link{
+	position: absolute;width:100%;height: 100%;left:0;top:0;
+}
+@mixin omit{
+	overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+}
+@mixin top{
+	padding-top: px2rem(88);
+}
+
+html{
+	font-size: 3.75vw;text-size-adjust: 100% !important;
+}
+body {
+	margin: 0; padding: 0; font-family: sans-serif;
+}
+body *:not(input):not(textarea){
+	user-select: none;text-decoration: none;color:inherit;
+}
+img,input,textarea,button{
+	vertical-align: middle;appearance: none;border-radius: 0;font-size: 1rem;outline: none;
+}
+
+#splash{
+	transition:opacity 500ms;
+	&.loaded{
+		opacity: 0;
+	}
+}
+
+/* 等待指示器 */
+.wait{
+	position:fixed;width:100%;height:100%;left:0;top:0;z-index:10;display:none;opacity: 0;transition: opacity 300ms;
+	&.show{
+		display: block;
+	}
+	&.fadein{
+		opacity: 1;
+	}
+	figure{
+		position:absolute;background:rgba(0,0,0,.5);width:10em;height:8em;text-align: center;line-height: 8em;left:50%;top:50%;margin:-5em 0 0 -5em;border-radius: .2em;
+		img{
+			width:2.5em;/* animation:wait 8s linear infinite; */
+		}
+	}
+}
+@keyframes wait {
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+};
+.popalert{
+	background:rgba(0,0,0,.5);text-align:center;width:14em;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff;padding:2.5em 1em;z-index: 1000;border-radius: .2em;display:none;opacity: 0;transition: opacity 300ms;
+	&.show{
+		display: block;
+		&.notouch{
+			pointer-events: none;
+		}
+	}
+	&.fadein{
+		opacity: 1;
+	}
+}
+
+/* 顶部 */
+.header{
+	width:100%;height: px2rem(88);position: fixed;left:0;top:0;z-index: 5;background: $red;
+	i{
+		position: absolute;left:0;top:0;height: 100%;width:10%;background: url(../images/icon-back.png) no-repeat center center;background-size: auto px2rem(32);
+	}
+	h1{
+		color:#fff;line-height: px2rem(88);font-size: px2rem(32);text-align: center;
+	}
+}
+.hastop{
+	@include top;
+}
+
+/* 新手福利 */
+.newcomer{
+	padding-bottom: px2rem(120);
+	.progress{
+		position: absolute;bottom:px2rem(30);;left:0;
+	}
+}
+.newcomerboard{
+	background: $red;height: px2rem(320);color:#fff;position: relative;
+	h1{
+		text-align: center;font-size: px2rem(48);padding-top: px2rem(15);
+		b{
+			font-size: px2rem(76);
+		}
+	}
+	h2{
+		text-align: center;font-size:px2rem(28);margin: px2rem(24) 0 px2rem(30)
+	}
+	h3{
+		font-size: px2rem(28);margin: 0 px2rem(40);position: relative;
+		span{
+			position: absolute;right:0;top:0;
+		}
+	}
+}
+.progress{
+	width:100%;
+	h5{
+		position: relative;margin: 0 0 px2rem(20);height: px2rem(22);font-size: px2rem(22);line-height: 1;
+		span{
+			position: absolute;left:0;top:0;white-space: nowrap;transform:translate3d(-50%,0,0);transition:left 1s;
+		}
+	}
+	h6{
+		height:px2rem(2);background: rgba(255,255,255,.4);position: relative;
+		span{
+			display: block;height:100%;width:0%;background: #fff;position: absolute;left:0;top:0;transition:width 1s;transform:translate3d(0,0,0);
+		}
+	}
+}
+.newcomertip{
+	line-height: px2rem(72);font-size: px2rem(22);color:#999;background:$graybg;padding-left: px2rem(40);
+}
+.newcomerinfo{
+	img{
+		margin:px2rem(36) auto px2rem(26);display: block;width: px2rem(590);
+	}
+	ul{
+		display: flex;margin: 0 px2rem(40);
+	}
+	li{
+		flex:1;font-size: px2rem(22);text-align: center;white-space: nowrap;
+		b{
+			display: block;color:$black;margin-bottom: .5em;
+		}
+		span{
+			display: block;color:$weak;
+		}
+		&:first-child,&:last-child{
+			flex:none;width:20%;
+		}
+	}
+	h1{
+		text-align: center;font-size: px2rem(20);color:$weak;margin: px2rem(30) 0 px2rem(25);
+	}
+	&:after{
+		content: "";display: block;height: px2rem(20);background: $graybg;
+	}
+}
+.newcomerintro{
+	margin: 0 px2rem(40);font-size: px2rem(24);
+	h1{
+		color:$black;padding: px2rem(40) 0;
+	}
+	ul{
+		li{
+			margin-bottom: px2rem(40);display: flex;
+			b{
+				color:$gray;display: block;width:6em;
+			}
+			span{
+				color:$black;display: block;
+			}
+		}
+	}
+}
+.newcomerbar{
+	position: fixed;left:0;bottom:0;background: #fff;width:100%;display: flex;height: px2rem(120);line-height: px2rem(120);text-align: center;
+	a{
+		display: block;flex:1;font-size: px2rem(36);color:#fff;background: $red;flex:1;
+	}
+	h1{
+		font-size: px2rem(24);color:$gray;flex:1;border-top: $border;
+	}
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" id="meta">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <style>
+      #splash{
+        position: fixed;width: 100%;height: 100%;background: #fff;z-index: 99;left: 0;top: 0;
+      }
+      #splash section{
+        position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);width: 15%;
+      }
+      #splash section img{
+        width: 100%;display: block;animation: jump .5s alternate-reverse infinite;transform-origin: 50% 100%;
+      }
+      #splash section div{
+        background: #ccc;padding-bottom: 20%;border-radius: 50%;margin-top: 10%;animation: shadow .5s alternate-reverse infinite;
+      }
+      @keyframes shadow{
+        0%{transform: scale(1)}
+        100%{transform: scale(.5)}
+      }
+      @keyframes jump{
+        0%{transform: translate(0,0) scale(1)}
+        100%{transform:  translate(0,-30%) scale(1,.95)}
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="splash">
+      <section>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAA6lBMVEUAAAC2AAW2AAW2AAW2AAW9gTC2AAW4Iw+2AAW2AAW2AAW2AAW9gTC9gTC2AAW2AAW2AAW2AAW2AAW9gTC2AAW2AAW2AAW2AAW9gTC2AAW2AAW2AAW2AAW2AAW9gTC2AAW2AAW9gTC2AAW9gTC2AAW9gTC2AAW9gTC2AAW2AAW2AAW2AAW2AAW9gTC2AAW2AAW9gTC2AAW9gTC2AAW9gTC9gTC9gTC9gTC2AAW2AAW2AAW2AAW9gTC9gTC9gTC9gTC9gTC9gTC9gTC2AAW9gTC9gTC9gTC9gTC9gTC9gTC2AAW9gTC2AAW9gTAfzeYYAAAATHRSTlMAsDCAYICQA/sK9KBh78YfWFD3++ji2qVVEtzQu7avmHFQRi0pCwbi1cK9lYhwVEI7IhHs5r2Wimc4NQ8G3NrBSigkGc7MuaRYPzkerPhIvAAAAkpJREFUOMuVlOd6qkAQhj+RiGAJ2LsmdpPYoonR1JPTg/d/O2GH2UcQDE/eH+6wvC6zswVHVKeJSdGwbaPYSFg7fIFmNpO2h2TM0k6pas0OMDJDXSVrhzLuBd1N7vC+UCoVDk+GepzClc1MOsoADoNtZyz7rv1u2e3NJc7hYdHm+bbhgcetWQrxDry70bQYGHtj+4kDiaMuE4ySi5aNBctZO1q2GyBUO0omLKpETX4pG2NMQJVxVuZYF/LUjUvmAKHochdcAmhSlNJxEj1GShmoJjkAFFN1UYAth6YiMiU7p8MSbVEHHkbhE6w7evVWRDO3t8PFDq2G0QPibvdENA/A+HTpmsClaGMQi5/UUT1Z58PrEQzn9xZQKL24y8wZisOS6D8HRBkKoBqznEKAGMsFkfz3ZE5Dyt0zD28syzTkBKWc3nu4kLKcYINKFyFz6XhRomReFFrucZRcd5d7Rxtp8d8rt9LplmgrLPcUdyPxFm3TcUkAN0K6Ac5EmwZSdEjKcmdOaUXpHKrAHY3IX7gHOqI/Kze/PFZcz59C6gJz0a6B3mGr+g9sE/gQTkYD+nknyC89R98iWZPPW061BYc1Jz/zXwXoJeUVtcxwypz0qg+0/ZcMNvTXAU9v9QiHfoanqNOHTd/FONGB1z1/G+CM8v+AnWNf+67cqwHQpcGeH0H0hzTZH4CeauMIdvd/5m4a8xY9rhw7yKvr0nBPT56HOYJ0f+1DeXlDCFp6GFSf/+IEWuW3z8y3LjR8wbJy9zLMO95wfV9Zws8nAjskn/DdJNMAAAAASUVORK5CYII=" alt="">
+        <div></div>
+      </section>
+    </div>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
